@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html lang="en">
+<head th:fragment="head">
+    @await Html.PartialAsync("_HeadContentPartial")    
+</head>
+<body>
+<div class="grid-container">
+    <section class="side-bar">
+        <div class="container col">
+            <div class="logo-sidebar container">
+                <img src="~/img/favicon.png" alt="" width="50" />
+                <h2>Hydra</h2>
+            </div>
+            <div class="profil container">
+                <div class="foto-profil"></div>
+                <div class="container col nama">
+                    <span>Anonymous</span>
+                    <small>Admin</small>
+                </div>
+            </div>
+
+            @await Html.PartialAsync("_Navigation")
+            
+        </div>
+    </section>
+    <section class="navbar container">
+        <div class="container">
+            <h2>@ViewData["Title"]</h2>
+        </div>
+        <div class="menu-icon container">
+            <a href="#">
+                <i class="fa fa-bell"></i>
+            </a>
+            <a href="/auth/logout">
+                <i class="fa fa-sign-out-alt"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="content container col">
+
+        <h3>@ViewData["Breadcrumb"]</h3>
+
+        @RenderBody()
+    </section>
+
+    <section class="footer">
+        <p>SetDesign &copy; 2022 Danu Diaz</p>
+    </section>
+</div>
+</body>
+</html>
