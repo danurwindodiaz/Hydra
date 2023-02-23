@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Hydra.DTO/1.0.0": {
+        "runtime": {
+          "Hydra.DTO.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Hydra.DTO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

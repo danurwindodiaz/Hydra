@@ -1,5 +1,6 @@
 ﻿using Hydra.DTO.Candidate;
 using Hydra.Repository.Dtos;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,6 @@ namespace Hydra.Service.Services.Interface {
         void DeleteCandidateById(int id);
         CandidateDetailDto SaveCandidate(CandidateInsertDto dto);
         CandidateDetailDto SaveCandidate(CandidateUpdateDto dto);
+        List<CandidateImportExcelDto> ImportExcel(ExcelPackage package);
     }
 }

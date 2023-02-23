@@ -2,26 +2,18 @@
     <a href="/" class="container">
         Dashboard <i class="fas fa-user"></i>
     </a>
-    @if (User.IsInRole("Administrator") || User.IsInRole("TrainingManager") || User.IsInRole("Recruiter")) {
         <a href="/candidate" class="container active">
             Candidate <i class="fas fa-archive"></i>
         </a>
-        @if (!User.IsInRole("TrainingManager")) {
              <a href="/itc" class="container">
                 ITC <i class="fas fa-archive"></i>
              </a>
-        }
-    }
-    @if (User.IsInRole("TrainingManager")) {
         <a href="/itc/itc-manager" class="container">
             ITC <i class="fas fa-archive"></i>
         </a>
-    }
-    @if (User.IsInRole("Trainer") || User.IsInRole("TrainingManager")) {
         <a href="/CandidateEvaluation" class="container">
             Candidate Evalution <i class="fas fa-archive"></i>
         </a>
-        @if (User.IsInRole("Trainer")) {
             <a href="/course/on-going" class="container">
                 Course On-Going <i class="fas fa-archive"></i>
             </a>
@@ -31,8 +23,6 @@
             <a href="/course/summary" class="container">
                 Course Summary <i class="fas fa-archive"></i>
         </a>
-        }
-    }
 </div>
 <div class="menu container col handphone">
     <a href="" class="container"><i class="fas fa-user"></i></a>

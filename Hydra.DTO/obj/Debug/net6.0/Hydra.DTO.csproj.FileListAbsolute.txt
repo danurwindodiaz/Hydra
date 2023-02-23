@@ -1,0 +1,12 @@
+C:\Users\1687\Documents\.NET\Hydra\Hydra.DTO\bin\Debug\net6.0\Hydra.DTO.deps.json
+C:\Users\1687\Documents\.NET\Hydra\Hydra.DTO\bin\Debug\net6.0\Hydra.DTO.dll
+C:\Users\1687\Documents\.NET\Hydra\Hydra.DTO\bin\Debug\net6.0\Hydra.DTO.pdb
+C:\Users\1687\Documents\.NET\Hydra\Hydra.DTO\obj\Debug\net6.0\Hydra.DTO.csproj.AssemblyReference.cache
+C:\Users\1687\Documents\.NET\Hydra\Hydra.DTO\obj\Debug\net6.0\Hydra.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1687\Documents\.NET\Hydra\Hydra.DTO\obj\Debug\net6.0\Hydra.DTO.AssemblyInfoInputs.cache
+C:\Users\1687\Documents\.NET\Hydra\Hydra.DTO\obj\Debug\net6.0\Hydra.DTO.AssemblyInfo.cs
+C:\Users\1687\Documents\.NET\Hydra\Hydra.DTO\obj\Debug\net6.0\Hydra.DTO.csproj.CoreCompileInputs.cache
+C:\Users\1687\Documents\.NET\Hydra\Hydra.DTO\obj\Debug\net6.0\Hydra.DTO.dll
+C:\Users\1687\Documents\.NET\Hydra\Hydra.DTO\obj\Debug\net6.0\refint\Hydra.DTO.dll
+C:\Users\1687\Documents\.NET\Hydra\Hydra.DTO\obj\Debug\net6.0\Hydra.DTO.pdb
+C:\Users\1687\Documents\.NET\Hydra\Hydra.DTO\obj\Debug\net6.0\ref\Hydra.DTO.dll

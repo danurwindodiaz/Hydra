@@ -3,6 +3,8 @@ namespace Hydra.Web.UI {
         public static void Main(string[] args) {
             var builder = WebApplication.CreateBuilder(args);
 
+            Hydra.Service.DependencyInjection.AddServices(builder.Services);
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 

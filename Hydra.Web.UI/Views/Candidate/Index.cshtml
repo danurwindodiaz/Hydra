@@ -1,5 +1,91 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Hydra.Web.UI.Models.Candidate
+@model CandidateIndexViewModel
 @{
+    ViewData["Title"] = "Candidates";
+    ViewData["Breadcrumb"] = "Candidates / Index";
 }
+@if (!User.IsInRole("TrainingManager")) {
+    <a asp-action="Upsert" class="button red-theme-button">Add new candidate</a>
+}
+<div class="search-container"> 
+    <header>
+        <p>Cari Berdasarkan:</p>
+    </header>
+    <form method="get" class="search-form">
+         <input class="" type="text" name="name" value="@Model.Name" placeholder="Name" />
+         <input type="number" name="bootcamp" value="@Model.Bootcamp" placeholder="Batch ITC" />
+         <button type="submit">Cari</button>        
+    </form>
+    <form asp-action="import" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <button type="submit">Upload</button> 
+    </form>
+</div>
+
+<div class="table-content">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nama Lengkap</th>
+                <th>ITC</th>
+                <th>Nomor Kontak</th>
+                <th>Domisili</th>
+                @if (User.IsInRole("TrainingManager")) {
+                    <th>Kelulusan</th>
+                }
+                @if (!User.IsInRole("TrainingManager")) {
+                    <th>Actions</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var data in Model.DataGrid.Data) {
+                <tr>
+                    <td>@data.FullName</td>
+                    <td>@data.BootcampClass</td>
+                    <td>@data.PhoneNumber</td>
+                    <td>@data.Domicile</td>
+                    @if(User.IsInRole("TrainingManager")) {                        
+                        <td>@(data.HasPassed == true ? "Lulus":"Tidak Lulus" )</td>
+                    }
+                    @if (!User.IsInRole("TrainingManager")) {
+                        <td class="action-td">
+                            <a href="#" class="btn btn-tbl edit"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-tbl info"><i class="fas fa-info-circle"></i></a>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">
+                    <div class="pagination text-white">
+                        <div>page @Model.DataGrid.PageNumber of @Model.DataGrid.TotalPages</div>
+                        <div>
+                            @for (int i = 1; i <= Model.DataGrid.TotalPages; i++) {
+                                @if (Model.DataGrid.PageNumber < 3 && i <= 5) {
+                                    <a asp-route-page="@i" asp-route-name="@Model.Name" asp-route-bootcamp="@Model.Bootcamp">
+                                        @i
+                                    </a>
+                                }
+                                else if (Model.DataGrid.PageNumber == Model.DataGrid.TotalPages && (Model.DataGrid.TotalPages - 5) < i) {
+                                    <a asp-route-page="@i" asp-route-name="@Model.Name" asp-route-bootcamp="@Model.Bootcamp">
+                                        @i
+                                    </a>
+                                }
+                                else {
+                                    <a asp-route-page="@i" asp-route-name="@Model.Name" asp-route-bootcamp="@Model.Bootcamp" hidden="@(i > Model.DataGrid.PageNumber + 2 || i < Model.DataGrid.PageNumber - 2)">
+                                        @if (i <= Model.DataGrid.TotalPages)
+                                            @i
+                                        </a>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
